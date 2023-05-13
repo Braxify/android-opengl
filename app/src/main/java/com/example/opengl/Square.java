@@ -24,7 +24,7 @@ import android.opengl.GLES20;
 /**
  * A two-dimensional square for use as a drawn object in OpenGL ES 2.0.
  */
-public class Square {
+public class Square extends Shape {
     private final String vertexShaderCode =
             // This matrix member variable provides a hook to manipulate
             // the coordinates of the objects that use this vertex shader
@@ -96,6 +96,7 @@ public class Square {
      * @param mvpMatrix - The Model View Project matrix in which to draw
      * this shape.
      */
+    @Override
     public void draw(float[] mvpMatrix) {
         // Add program to OpenGL environment
         GLES20.glUseProgram(mProgram);
